@@ -14,6 +14,11 @@ mercurialの標準コマンドでは、changesetが増えたときにそこを�
 るのですからpythonでちょちょいと書けば簡単に加工できるはずだ、という思い
 こみの元作ってみました。
 
+HOWTO
+----
+export LANG=ja_JP.UTF-8 LC_ALL=ja_JP.UTF-8
+(cd レポジトリ ; (設置場所)/hg_changesets2mail.py)
+
 TODO
 ----
 内部に決め打ちになっている設定値をコマンドラインパラメータに分離する
