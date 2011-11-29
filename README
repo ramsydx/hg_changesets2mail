@@ -3,12 +3,10 @@ mercurial changeset to mail
 
 WHAT?
 ----
-
-mecirialで管理されたレポジトリの、hg logをメールで射出するものです。
+mecirialなレポジトリの、changeset情報をメール送信するものです。
 
 WHY?
 ----
-
 mercurialの標準コマンドでは、changesetが増えたときにそこをピンポイントで
 抽出してメールにするの難しいからです。折角mercurialはpythonで書かれてい
 るのですからpythonでちょちょいと書けば簡単に加工できるはずだ、という思い
@@ -17,9 +15,19 @@ mercurialの標準コマンドでは、changesetが増えたときにそこを�
 HOWTO
 ----
 export LANG=ja_JP.UTF-8 LC_ALL=ja_JP.UTF-8
-(cd レポジトリ ; (設置場所)/hg_changesets2mail.py)
+(設置場所)/hg_changesets2mail.py \
+ -f 送信元メールアドレス \
+ -t 送信先メールアドレス \
+ -r クローンしたレポジトリ \
+ -s 処理済みのChangesetリストを保存するファイル名 \
+ -a チェックするChangesetの世代数
 
 TODO
 ----
 特に無し。要望あれば考えます。
+
+MEMO
+----
+Content-Transfer-Encodingがbase64になっちゃうのは仕様です。回避策があれ
+ばどなたかおしえてくだされ……
 
